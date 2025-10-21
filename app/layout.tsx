@@ -26,8 +26,6 @@ export const metadata: Metadata = {
   generator: "ouadielaachkar.com",
   icons: {
     icon: '/favicon.svg',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
   },
 }
 
