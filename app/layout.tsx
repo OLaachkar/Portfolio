@@ -21,9 +21,14 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.app",
+  title: "Ouadie | Portfolio",
+  description: "Portfolio of Ouadie Laachkar, a developer from Amsterdam",
+  generator: "ouadielaachkar.com",
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
+  },
 }
 
 export default function RootLayout({
