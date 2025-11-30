@@ -2,7 +2,7 @@
 
 export default function Header() {
   return (
-    <header className="relative z-20 grid grid-cols-2 md:grid-cols-3 items-center p-4 md:p-6 gap-4">
+    <header className="relative z-30 pointer-events-auto grid grid-cols-2 md:grid-cols-3 items-center p-4 md:p-6 gap-4">
       {/* Logo */}
       <div className="flex items-center justify-start">
         <div className="relative group cursor-pointer">
@@ -13,12 +13,12 @@ export default function Header() {
         </div>
       </div>
 
-      <nav className="hidden md:flex items-center justify-center space-x-2">
+      <nav className="hidden md:flex items-center justify-center space-x-2 pointer-events-auto">
         <a
           href="https://github.com/OLaachkar"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white/80 hover:text-white text-xs font-light px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-200"
+          className="text-white/80 hover:text-white text-xs font-light px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-200 cursor-pointer"
         >
           GitHub
         </a>
@@ -26,7 +26,7 @@ export default function Header() {
           href="https://www.linkedin.com/in/ouadielaachkar/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white/80 hover:text-white text-xs font-light px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-200"
+          className="text-white/80 hover:text-white text-xs font-light px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-200 cursor-pointer"
         >
           LinkedIn
         </a>
@@ -34,7 +34,7 @@ export default function Header() {
           href="https://discord.com/users/986010906876071977"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white/80 hover:text-white text-xs font-light px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-200"
+          className="text-white/80 hover:text-white text-xs font-light px-3 py-2 rounded-full hover:bg-white/10 transition-all duration-200 cursor-pointer"
         >
           Discord
         </a>

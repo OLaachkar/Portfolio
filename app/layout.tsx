@@ -43,19 +43,19 @@ export const metadata: Metadata = {
     description: "16-year-old developer & entrepreneur from Amsterdam. Building innovative AI systems and digital products. Founder of Verba, an AI character creation platform.",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "/favicon.svg",
+        width: 400,
+        height: 400,
         alt: "Ouadie - Developer & Entrepreneur Portfolio",
-        type: "image/png",
+        type: "image/svg+xml",
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Ouadie | Developer & Entrepreneur",
     description: "16-year-old developer & entrepreneur from Amsterdam. Building innovative AI systems and digital products. Founder of Verba.",
-    images: ["/og-image.png"],
+    images: ["/favicon.svg"],
     creator: "@ouadielaachkar",
   },
   robots: {
