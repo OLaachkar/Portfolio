@@ -10,13 +10,13 @@ export default function HeroContent() {
       title: "Verba",
       description: "AI character creation platform with Discord, Twitter/X, and Bluesky integration",
       tech: ["Node.js", "AI/LLM", "Discord API"],
-      image: "/modern-ecommerce-interface.png",
+      image: "https://i.ibb.co/ycSJnGbK/Screenshot-2025-10-21-165110.png",
     },
     {
       title: "Portfolio Website",
       description: "Fully AI-assisted portfolio showcasing projects and skills",
       tech: ["React", "Next.js", "Tailwind"],
-      image: "/creative-portfolio-website.png",
+      image: "https://i.ibb.co/RpDS8Wbj/Screenshot-2025-10-21-164906.png",
     },
   ]
 
