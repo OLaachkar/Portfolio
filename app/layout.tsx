@@ -23,11 +23,59 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   title: "Ouadie | Portfolio",
-  description: "Portfolio of Ouadie Laachkar, a developer from Amsterdam",
-  generator: "ouadielaachkar.com",
+  description: "16-year-old developer & entrepreneur from Amsterdam. Building innovative systems and digital products. Founder of Verba, an AI character creation platform.",
+  generator: "Next.js",
+  applicationName: "Ouadie Portfolio",
+  authors: [{ name: "Ouadie Laachkar" }],
+  creator: "Ouadie Laachkar",
+  publisher: "Ouadie Laachkar",
+  keywords: ["developer", "portfolio", "AI", "Verba", "Amsterdam", "entrepreneur", "software engineer"],
   icons: {
     icon: '/favicon.svg',
+    apple: '/favicon.svg',
   },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://ouadielaachkar.com",
+    siteName: "Ouadie | Portfolio",
+    title: "Ouadie | Developer & Entrepreneur",
+    description: "16-year-old developer & entrepreneur from Amsterdam. Building innovative AI systems and digital products. Founder of Verba, an AI character creation platform.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Ouadie - Developer & Entrepreneur Portfolio",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ouadie | Developer & Entrepreneur",
+    description: "16-year-old developer & entrepreneur from Amsterdam. Building innovative AI systems and digital products. Founder of Verba.",
+    images: ["/og-image.png"],
+    creator: "@ouadielaachkar",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
+  themeColor: "#8b5cf6",
+  colorScheme: "dark",
 }
 
 export default function RootLayout({
@@ -46,6 +94,8 @@ html {
   --font-instrument-serif: ${instrumentSerif.variable};
 }
         `}</style>
+        <meta name="theme-color" content="#8b5cf6" />
+        <meta name="msapplication-TileColor" content="#8b5cf6" />
       </head>
       <body className={`${figtree.variable} ${instrumentSerif.variable}`}>
         <BackgroundWrapper>{children}</BackgroundWrapper>
