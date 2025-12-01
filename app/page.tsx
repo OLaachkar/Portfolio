@@ -97,7 +97,7 @@ export default function Portfolio() {
 
       {/* Home View */}
       <main
-        className={`absolute inset-0 z-20 flex items-center justify-center px-4 md:px-8 py-12 md:py-20 pb-24 md:pb-40 overflow-hidden transition-all duration-700 ${
+        className={`absolute inset-0 z-20 flex items-center justify-center px-4 md:px-8 py-16 md:py-24 lg:py-32 pb-24 md:pb-40 overflow-hidden transition-all duration-700 ${
           currentView === "home" ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8 pointer-events-none"
         }`}
       >
@@ -237,11 +237,11 @@ export default function Portfolio() {
 
       {/* Experiences View */}
       <main
-        className={`absolute inset-0 z-20 flex items-start lg:items-center justify-center overflow-y-auto px-3 sm:px-4 md:px-8 py-4 sm:py-8 md:py-12 lg:py-20 pb-16 sm:pb-20 transition-all duration-700 ${
+        className={`absolute inset-0 z-20 flex items-center justify-center overflow-y-auto px-3 sm:px-4 md:px-8 py-8 sm:py-12 md:py-16 lg:py-24 pb-16 sm:pb-20 transition-all duration-700 ${
           currentView === "experiences" ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8 pointer-events-none"
         }`}
       >
-        <div className="max-w-7xl w-full mx-auto flex flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8">
+        <div className="max-w-7xl w-full mx-auto flex flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8 lg:items-start">
           <div className="lg:hidden mb-2 sm:mb-4">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -262,7 +262,7 @@ export default function Portfolio() {
           <aside
             className={`overflow-hidden transition-all duration-300 ${
               mobileMenuOpen ? "max-h-[500px] opacity-100 mb-4" : "max-h-0 opacity-0 mb-0"
-            } lg:max-h-none lg:opacity-100 lg:block w-full lg:w-64 flex-shrink-0 lg:mb-0`}
+            } lg:max-h-none lg:opacity-100 lg:block w-full lg:w-64 flex-shrink-0 lg:mb-0 lg:self-start`}
           >
             <div className="lg:sticky lg:top-24 rounded-xl sm:rounded-2xl md:rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 p-3 sm:p-4 md:p-6">
               <div className="absolute top-0 left-3 sm:left-4 right-3 sm:right-4 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full" />
@@ -321,37 +321,40 @@ export default function Portfolio() {
           </aside>
 
           {/* Content Area */}
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0 lg:self-start">
             {/* Education Section */}
             {activeSection === "education" && (
-              <div className="space-y-3 sm:space-y-4 md:space-y-6 animate-in fade-in duration-500">
+              <div className="animate-in fade-in duration-500">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 sm:mb-6 md:mb-8">Education</h1>
-                {educationContent.map((item, index) => (
-                  <div
-                    key={index}
-                    className="rounded-xl sm:rounded-2xl md:rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 p-4 sm:p-6 md:p-8 transition-all duration-300 active:bg-white/10 active:border-white/20"
-                  >
-                    <div className="absolute top-0 left-3 sm:left-4 md:left-8 right-3 sm:right-4 md:right-8 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full" />
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 sm:gap-3 mb-3 sm:mb-4">
-                      <div className="flex-1 min-w-0">
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-light text-white mb-1 sm:mb-2 break-words">{item.title}</h3>
-                        <p className="text-xs sm:text-sm font-light text-white/70 break-words">{item.institution}</p>
+                <div className="space-y-3 sm:space-y-4 md:space-y-6">
+                  {educationContent.map((item, index) => (
+                    <div
+                      key={index}
+                      className="rounded-xl sm:rounded-2xl md:rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 p-4 sm:p-6 md:p-8 transition-all duration-300 active:bg-white/10 active:border-white/20"
+                    >
+                      <div className="absolute top-0 left-3 sm:left-4 md:left-8 right-3 sm:right-4 md:right-8 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full" />
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 sm:gap-3 mb-3 sm:mb-4">
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-lg sm:text-xl md:text-2xl font-light text-white mb-1 sm:mb-2 break-words">{item.title}</h3>
+                          <p className="text-xs sm:text-sm font-light text-white/70 break-words">{item.institution}</p>
+                        </div>
+                        <span className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 text-white/60 text-[10px] sm:text-xs font-light border border-white/10 self-start whitespace-nowrap">
+                          {item.period}
+                        </span>
                       </div>
-                      <span className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 text-white/60 text-[10px] sm:text-xs font-light border border-white/10 self-start whitespace-nowrap">
-                        {item.period}
-                      </span>
+                      <p className="text-xs sm:text-sm font-light text-white/60 leading-relaxed break-words">{item.description}</p>
                     </div>
-                    <p className="text-xs sm:text-sm font-light text-white/60 leading-relaxed break-words">{item.description}</p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             )}
 
             {/* Projects Section */}
             {activeSection === "projects" && (
-              <div className="space-y-3 sm:space-y-4 md:space-y-6 animate-in fade-in duration-500">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 sm:mb-6 md:mb-8">Projects</h1>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
+              <div className="animate-in fade-in duration-500">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 sm:mb-6 md:mb-8 lg:mt-0">Projects</h1>
+                <div className="space-y-3 sm:space-y-4 md:space-y-6">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
                   {projectsContent.map((project, index) => (
                     <div
                       key={index}
@@ -394,15 +397,17 @@ export default function Portfolio() {
                       </div>
                     </div>
                   ))}
+                  </div>
                 </div>
               </div>
             )}
 
             {/* Future Section */}
             {activeSection === "future" && (
-              <div className="space-y-3 sm:space-y-4 md:space-y-6 animate-in fade-in duration-500">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 sm:mb-6 md:mb-8">Future</h1>
-                {futureContent.map((item, index) => (
+              <div className="animate-in fade-in duration-500">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 sm:mb-6 md:mb-8 lg:mt-0">Future</h1>
+                <div className="space-y-3 sm:space-y-4 md:space-y-6">
+                  {futureContent.map((item, index) => (
                   <div
                     key={index}
                     className="rounded-xl sm:rounded-2xl md:rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 p-4 sm:p-6 md:p-8 transition-all duration-300 active:bg-white/10 active:border-white/20"
@@ -416,7 +421,8 @@ export default function Portfolio() {
                     </div>
                     <p className="text-xs sm:text-sm font-light text-white/60 leading-relaxed break-words">{item.description}</p>
                   </div>
-                ))}
+                  ))}
+                </div>
               </div>
             )}
           </div>
